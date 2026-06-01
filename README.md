@@ -1,12 +1,21 @@
-# Network Traffic Analysis with Wireshark | Packet Capture & Protocol Investigation
+# SOC Network Traffic Analysis Lab
+
+## Wireshark-Based Packet Capture, DNS Investigation & Protocol Analysis
+
+---
 
 ## Overview
 
-This project demonstrates practical **network traffic analysis using Wireshark** within a **Kali Linux virtual machine environment**.
+This project demonstrates practical **network traffic capture, monitoring, and investigation** using **Wireshark** inside a **Kali Linux Virtual Machine**.
 
-The objective of this lab was to capture live network traffic, inspect DNS communications, analyze protocol distribution, review conversation statistics, and understand communication patterns generated during web browsing activity.
+The objective of this lab was to perform live packet analysis, generate web traffic, inspect DNS communications, analyze protocol hierarchy statistics, review conversation statistics, and document findings using a SOC-style investigation workflow.
 
-This project simulates the responsibilities of a **Network Analyst / SOC Analyst** performing packet inspection, protocol investigation, and traffic monitoring.
+The project simulates activities commonly performed by:
+
+* SOC Analysts
+* Network Security Analysts
+* Incident Response Teams
+* Security Monitoring Engineers
 
 ---
 
@@ -14,132 +23,173 @@ This project simulates the responsibilities of a **Network Analyst / SOC Analyst
 
 By completing this project, I demonstrated the ability to:
 
-* Conduct live packet captures using Wireshark
-* Apply and remove display filters
-* Analyze DNS network traffic
-* Investigate protocol hierarchy statistics
-* Review network conversation statistics
-* Interpret traffic flows and communication patterns
-* Document and present packet analysis findings
+* Launch and configure a Kali Linux VM environment
+* Capture live network traffic using Wireshark
+* Apply DNS display filters
+* Analyze protocol hierarchy statistics
+* Investigate network conversations
+* Interpret communication flows
+* Perform SOC-style network investigation
+* Document packet analysis findings
 
 ---
 
 ## Lab Environment
 
-| Component        | Details                |
-| ---------------- | ---------------------- |
-| Operating System | Kali Linux VM          |
-| Tool Used        | Wireshark              |
-| Packet Format    | `.pcapng`              |
-| Browser Activity | Web Traffic Generation |
-| Target Websites  | kali.org, redhat.com   |
+| Component         | Configuration          |
+| ----------------- | ---------------------- |
+| Operating System  | Kali Linux VM          |
+| Analysis Tool     | Wireshark              |
+| Packet Format     | `.pcapng`              |
+| Browser Activity  | Web Traffic Generation |
+| Websites Accessed | kali.org, redhat.com   |
 
 ---
 
-## Project Tasks
+# Task 1 — Launch Kali Linux Environment
+
+## Step 1 — Power On Kali Linux Virtual Machine
+
+Started the Kali Linux Virtual Machine and authenticated into the environment.
+
+### Screenshot
+
+<img src="screenshots/1.Power on your Kali Linux VM and log in to the environment.png" width="1000">
 
 ---
 
-## Task 1: Live Packet Capture
+## Step 2 — Open Application Menu
 
-### Objective
+Opened the Kali Linux application launcher.
 
-Capture real-time network traffic using Wireshark.
+### Screenshot
+
+<img src="screenshots/2.Click the Kali Linux dragon icon in the top-left.png" width="1000">
+
+---
+
+## Step 3 — Search for Wireshark
+
+Searched for the Wireshark packet analyzer.
+
+### Screenshot
+
+<img src="screenshots/3.Search Wireshark.png" width="1000">
+
+---
+
+## Step 4 — Launch Wireshark
+
+Opened the Wireshark application.
+
+### Screenshot
+
+<img src="screenshots/4.Welcome to wireshark.png" width="1000">
+
+---
+
+# Task 2 — Live Packet Capture
+
+## Objective
+
+Capture real-time network traffic.
 
 ### Steps Performed
 
-1. Opened Wireshark.
-2. Selected the active network interface.
-3. Started live packet capture.
-4. Generated network traffic by browsing:
+1. Selected active network interface.
+2. Started live capture.
+3. Generated browser traffic.
+4. Visited:
 
 * https://www.kali.org/
 * https://www.redhat.com/en
 
-5. Observed captured packets in real time.
-6. Stopped the capture session.
-7. Saved the capture file in `.pcapng` format.
+5. Monitored packet activity.
 
-### Saved File
+### Screenshot — Live Traffic Capture
 
-```bash
+<img src="screenshots/5.Live Network Traffic.png" width="1000">
+
+---
+
+## Step 5 — Save Packet Capture
+
+Saved the captured traffic file.
+
+File format:
+
+```plaintext
 Packet capture.pcapng
 ```
 
 ### Screenshot
 
-<img src="images/Live Packet Capture.png" width="1000">
+<img src="screenshots/6.Save capture file on VM desktop.png" width="1000">
 
 ---
 
-## Task 2: Save Captured Traffic File
+## Step 6 — Verify Desktop File Storage
 
-### Objective
-
-Verify successful packet capture storage.
-
-### Steps Performed
-
-1. Saved the capture file to the Kali Linux Desktop.
-2. Verified file availability.
-3. Confirmed correct `.pcapng` format.
+Verified successful packet capture storage on Kali Desktop.
 
 ### Screenshot
 
-<img src="images/Desktop.png" width="1000">
+<img src="screenshots/7.Desktop.png" width="1000">
 
 ---
 
-## Task 3: DNS Traffic Filtering
+# Task 3 — DNS Traffic Investigation
 
-### Objective
+## Objective
 
-Filter and analyze DNS traffic using Wireshark display filters.
+Filter and analyze DNS communications.
 
 ### Display Filter Used
 
-```bash
+```plaintext
 dns
 ```
 
 ### Steps Performed
 
-1. Applied the DNS display filter.
-2. Inspected DNS query and response packets.
-3. Identified hostname resolution requests generated during browsing activity.
-4. Removed the display filter after analysis.
+1. Applied DNS filter.
+2. Investigated DNS queries.
+3. Reviewed DNS responses.
+4. Identified hostname resolution traffic.
 
-### Key Observation
+### Screenshot — DNS Filter Applied
 
-The browser generated DNS requests to resolve domain names before establishing HTTPS sessions.
-
-### Screenshot
-
-<img src="images/Filtered DNS Traffic.png" width="1000">
+<img src="screenshots/8.Filtered DNS traffic.png" width="1000">
 
 ---
 
-## Task 4: Protocol Hierarchy Analysis
+## Step 7 — Clear Display Filter
 
-### Objective
+Removed DNS display filter after analysis.
 
-Analyze protocol distribution inside captured network traffic.
+### Screenshot
 
-### Steps Performed
+<img src="screenshots/9.Clear the DNS filter from the display.png" width="1000">
 
-1. Opened:
+---
 
-```bash
+# Task 4 — Protocol Hierarchy Analysis
+
+## Objective
+
+Review protocol distribution within captured traffic.
+
+### Navigation Path
+
+```plaintext
 Statistics → Protocol Hierarchy
 ```
 
-2. Sorted results by:
+### Sorting Method
 
-```bash
+```plaintext
 Percent Packets (Highest → Lowest)
 ```
-
-3. Reviewed protocol usage and packet distribution.
 
 ### Protocols Observed
 
@@ -147,124 +197,155 @@ Percent Packets (Highest → Lowest)
 * TCP
 * TLS / SSL
 * DNS
-* HTTP / HTTPS
+* HTTPS
 
 ### Screenshot
 
-<img src="images/Protocol Hierarchy Statistics Results.png" width="1000">
+<img src="screenshots/10.Protocol Hierarchy Statistics results.png" width="1000">
 
 ---
 
-## Task 5: Conversation Statistics Analysis
+# Task 5 — Conversation Statistics Investigation
 
-### Objective
+## Objective
 
-Review communication endpoints and traffic volume.
+Analyze communication endpoints and traffic volume.
 
-### Steps Performed
+### Navigation Path
 
-1. Opened:
-
-```bash
+```plaintext
 Statistics → Conversations
 ```
 
-2. Sorted conversations by:
+### Sorting Method
 
-```bash
+```plaintext
 Bytes (Highest → Lowest)
 ```
 
-3. Analyzed communication pairs and high-volume traffic flows.
+### Analysis Focus
 
-### Key Observation
-
-Conversation statistics highlighted the systems responsible for the highest amount of data transfer during the browsing session.
+* Source IP Addresses
+* Destination IP Addresses
+* Communication Sessions
+* High-Volume Traffic Flows
 
 ### Screenshot
 
-<img src="images/Conversation Statistics Report.png" width="1000">
+<img src="screenshots/11.Conversation Statistics report.png" width="1000">
 
 ---
 
-## Traffic Analysis Findings
-
-### Traffic Behavior
+# Traffic Analysis Findings
 
 The captured traffic primarily consisted of:
 
 * DNS Resolution Requests
 * TCP Session Establishment
-* TLS/HTTPS Encrypted Communications
-* Client-Server Browser Interactions
+* TLS Handshakes
+* HTTPS Encrypted Traffic
+* Browser-Generated Client-Server Communication
 
-The browsing activity generated encrypted web traffic supported by DNS lookup operations.
+Observed communication workflow:
+
+DNS Lookup
+↓
+TCP Connection
+↓
+TLS Negotiation
+↓
+Encrypted HTTPS Session
 
 ---
 
-## Security Investigation Perspective
+# Security Investigation Perspective
 
-If suspicious traffic were identified during analysis, the following response actions could be considered.
+Potential suspicious indicators analysts should investigate:
 
-### Immediate Containment Actions
+* Unknown external destinations
+* Suspicious DNS domains
+* Large outbound transfers
+* Excessive DNS queries
+* Rare protocol usage
+* Persistent encrypted tunnels
+
+---
+
+## Recommended Immediate Containment Actions
+
+If suspicious traffic is identified:
 
 * Isolate affected endpoints
-* Block suspicious IP addresses
-* Restrict malicious outbound traffic
-* Monitor active connections
-
-### Investigation Actions
-
-* Inspect packet metadata
-* Review DNS queries
-* Correlate timestamps
-* Identify anomalous traffic behavior
-* Investigate communication endpoints
+* Block malicious IPs
+* Restrict suspicious outbound communications
+* Preserve packet captures
+* Collect supporting logs
 
 ---
 
-## Supporting Security Tools
+## Supporting Tools & Logs
 
-Additional tools and logs useful for validating findings:
+### Security Tools
 
 * Wireshark
 * Zeek
 * NetFlow Analyzer
+* Snort
+* Suricata
+* Splunk
+* Microsoft Sentinel
+
+### Log Sources
+
 * Firewall Logs
-* IDS / IPS Logs
-* SIEM Platforms
-* Endpoint Security Logs
+* DNS Logs
+* Proxy Logs
+* Endpoint Logs
+* SIEM Events
 
 ---
 
 ## Skills Demonstrated
 
 * Network Traffic Analysis
-* Packet Inspection
-* Wireshark Analysis
+* Wireshark Packet Inspection
 * DNS Investigation
 * Protocol Analysis
-* Traffic Monitoring
-* Security Investigation
-* Network Communication Analysis
-* Cybersecurity Documentation
+* Conversation Statistics Analysis
+* Security Monitoring
+* Incident Investigation
+* SOC Workflow Documentation
 
 ---
 
 ## Repository Structure
 
-```bash
-Wireshark-Network-Traffic-Analysis/
+```plaintext
+SOC-Network-Traffic-Analysis-Lab/
 │
 ├── README.md
-├── Packet capture.pcapng
 │
-└── images/
-    ├── Live Packet Capture.png
-    ├── Desktop.png
-    ├── Filtered DNS Traffic.png
-    ├── Protocol Hierarchy Statistics Results.png
-    └── Conversation Statistics Report.png
+├── report/
+│   └── Wireshark_Network_Traffic_Analysis_Report.pdf
+│
+├── packet-capture/
+│   └── Packet capture.pcapng
+│
+├── screenshots/
+│   ├── 1.Power on your Kali Linux VM.png
+│   ├── 2.Click the Kali Linux dragon icon.png
+│   ├── 3.Search Wireshark.png
+│   ├── 4.Welcome to wireshark.png
+│   ├── 5.Live Network Traffic.png
+│   ├── 6.Save capture file on VM desktop.png
+│   ├── 7.Desktop.png
+│   ├── 8.Filtered DNS traffic.png
+│   ├── 9.Clear the DNS filter.png
+│   ├── 10.Protocol Hierarchy Statistics results.png
+│   └── 11.Conversation Statistics report.png
+│
+└── docs/
+    └── Analysis_Notes.md
 ```
 
 ---
