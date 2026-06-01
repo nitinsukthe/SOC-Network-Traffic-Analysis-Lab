@@ -128,9 +128,9 @@ Packet capture.pcapng
 
 ---
 
-## Step 6 — Verify Desktop File Storage
+## Step 6 — Verify Desktop File 
 
-Verified successful packet capture storage on Kali Desktop.
+Verified successful packet capture file on Kali Desktop.
 
 ### Screenshot
 
