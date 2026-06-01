@@ -318,38 +318,6 @@ If suspicious traffic is identified:
 
 ---
 
-## Repository Structure
-
-```plaintext
-SOC-Network-Traffic-Analysis-Lab/
-│
-├── README.md
-│
-├── report/
-│   └── Wireshark_Network_Traffic_Analysis_Report.pdf
-│
-├── packet-capture/
-│   └── Packet capture.pcapng
-│
-├── screenshots/
-│   ├── 1.Power on your Kali Linux VM.png
-│   ├── 2.Click the Kali Linux dragon icon.png
-│   ├── 3.Search Wireshark.png
-│   ├── 4.Welcome to wireshark.png
-│   ├── 5.Live Network Traffic.png
-│   ├── 6.Save capture file on VM desktop.png
-│   ├── 7.Desktop.png
-│   ├── 8.Filtered DNS traffic.png
-│   ├── 9.Clear the DNS filter.png
-│   ├── 10.Protocol Hierarchy Statistics results.png
-│   └── 11.Conversation Statistics report.png
-│
-└── docs/
-    └── Analysis_Notes.md
-```
-
----
-
 ## Author
 
 **Nitin Sukthe**
