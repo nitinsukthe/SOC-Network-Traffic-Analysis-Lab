@@ -54,7 +54,7 @@ Started the Kali Linux Virtual Machine and authenticated into the environment.
 
 ### Screenshot
 
-<img src="./screenshots/1.Power on your Kali Linux VM and log in to the environment.png" width="1000">
+<img src="screenshots/01_VM_Start.png" width="1000">
 
 ---
 
@@ -64,7 +64,7 @@ Opened the Kali Linux application launcher.
 
 ### Screenshot
 
-<img src="./screenshots/2.Click the Kali Linux dragon icon in the top-left.png" width="1000">
+<img src="screenshots/02_Kali_Menu.png" width="1000">
 
 ---
 
