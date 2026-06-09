@@ -305,6 +305,19 @@ If suspicious traffic is identified:
 
 ---
 
+# Project Documentation
+
+This repository contains complete technical documentation and supporting artifacts.
+
+| Document | Description |
+|-----------|-------------|
+| Analysis_Notes.md | Detailed traffic analysis notes and observations |
+| Wireshark_Network_Traffic_Analysis_Report.pdf | Formal network traffic investigation report |
+| Packet_capture.pcapng | Original packet capture file |
+| Screenshots | Step-by-step evidence collected during analysis |
+
+---
+
 ## Skills Demonstrated
 
 * Network Traffic Analysis
